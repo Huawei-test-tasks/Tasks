@@ -9,11 +9,11 @@ Calculator::Calculator(const Cases& cases)
         calculate(c);
 }
 
-void Calculator::calculate(const Case& expr)
+void Calculator::calculate(const Case& task)
 {
-    BigInterger sum(expr.A);
+    BigInterger sum(task.A);
 
-    sum += expr.B;
+    sum += task.B;
 
     m_results.push_back(sum.toString());
 }

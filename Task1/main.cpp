@@ -1,4 +1,3 @@
-
 #include "ParserInput.h"
 #include "Calculator.h"
 
