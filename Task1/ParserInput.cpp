@@ -21,6 +21,8 @@ ParserInput::ParserInput(std::istream& stream)
     std::string line;
 
     std::getline(stream, line);
+    std::trim_inplace(line);
+
     auto numberCases = std::stoull(line);
 
     m_cases.reserve(numberCases);
@@ -29,6 +31,7 @@ ParserInput::ParserInput(std::istream& stream)
     while (numberCases > 0 && !stream.eof())
     {
         std::getline(stream, line);
+        std::trim_inplace(line);
 
         if (line.empty())
             continue;

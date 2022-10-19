@@ -23,6 +23,7 @@ ParserInput::ParserInput(std::istream& stream)
     while (!stream.eof())
     {
         std::getline(stream, line);
+        std::trim_inplace(line);
 
         if (line.empty())
             continue;
@@ -46,6 +47,8 @@ ParserInput::ParserInput(std::istream& stream)
         while (i++ < task.N && !stream.eof())
         {
             std::getline(stream, line);
+            std::trim_inplace(line);
+
             task.Integers.push_back(std::stoull(line));
         }
 
