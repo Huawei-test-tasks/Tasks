@@ -23,9 +23,12 @@ ParserInput::ParserInput(std::istream& stream)
     std::getline(stream, line);
     std::trim_inplace(line);
 
+    if (line.empty())
+        return;
+
     auto numberCases = std::stoull(line);
 
-    m_cases.reserve(numberCases);
+    m_cases.reserve(static_cast<size_t>(numberCases));
 
     std::vector<std::string> line_words;
     while (numberCases > 0 && !stream.eof())

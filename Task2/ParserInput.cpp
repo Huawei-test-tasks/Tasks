@@ -38,7 +38,10 @@ ParserInput::ParserInput(std::istream& stream)
             continue;
 #endif
 
-        Case task(std::stoul(line_words[0]), std::stoull(line_words[1]));
+        auto N = static_cast<uint32_t>(std::stoul(line_words[0]));
+        auto M = static_cast<int64_t>(std::stoll(line_words[1]));
+
+        Case task(N, M);
 
         if (task.N == 0 && task.M == 0)
             break;

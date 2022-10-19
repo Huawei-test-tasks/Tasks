@@ -7,11 +7,11 @@ class Calculator
 public:
     Calculator(const Cases& cases);
 
-    const std::vector<uint32_t>& results() const { return m_results; };
+    const std::vector<int64_t>& results() const { return m_results; };
 
 private:
     void calculate(const Case& task);
 
 private:
-    std::vector<uint32_t> m_results;
+    std::vector<int64_t> m_results;
 };

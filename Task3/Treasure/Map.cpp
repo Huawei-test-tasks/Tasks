@@ -2,12 +2,17 @@
 
 #include <cstring>
 #include <algorithm>
+#include <iterator>
 
 Map::Map(PiecesStorage& piecesStorage)
     : m_covering(piecesStorage.width() * piecesStorage.height(), 0)
-    , m_capturePieces(piecesStorage.pieces().begin(), piecesStorage.pieces().end())
     , m_piecesStorage(piecesStorage)
 {
+    m_capturePieces.reserve(piecesStorage.pieces().size());
+
+    for (auto& p : piecesStorage.pieces())
+        m_capturePieces.push_back(p);
+
     build();
 }
 

@@ -6,6 +6,15 @@
 5. Executable files will appear in the bin directory: \<git clone dir\>/build/bin
 6. To clean the build just remove build dir.
 
+#  Windows CMake build:
+1. cd \<git clone dir\>
+2. mkdir ./build
+3. cd ./build
+4. cmake .. -A x64
+5. cmake --build . --config Release
+6. Executable files will appear in the bin directory: \<git clone dir\>/build/bin/Release
+7. To clean the build just remove build dir.
+
 # Usage
 1. Launching programs (./build/bin/task1(2,3)) with a path to a file:
     ```

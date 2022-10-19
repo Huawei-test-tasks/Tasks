@@ -1,5 +1,6 @@
 #include "Calculator.h"
 
+#include <functional>
 #include <algorithm>
 
 Calculator::Calculator(const Cases& cases)
@@ -12,15 +13,18 @@ Calculator::Calculator(const Cases& cases)
 
 void Calculator::calculate(const Case& task)
 {
-    std::vector<decltype(Case::Integers)::value_type> doubleSums;
+    decltype(Case::Integers) doubleSums;
 
     doubleSums.reserve(task.N * task.N);
 
     for (auto& l : task.Integers)
     {
         for (auto& r : task.Integers)
-            if (auto sum = l + r; sum <= task.M)
+        {
+            auto sum = l + r;
+            if (sum <= task.M)
                 doubleSums.push_back(sum);
+        }
     }
 
     std::sort(doubleSums.begin(), doubleSums.end());
@@ -38,7 +42,7 @@ void Calculator::calculate(const Case& task)
                     , std::greater<decltype(doubleSums)::value_type>()
                   );
 
-        auto allowed = it != doubleSums.rend() ? *it : 0;
+        auto allowed = (it != doubleSums.rend() ? *it : 0);
 
         res = std::max(res, ds + allowed);
     }

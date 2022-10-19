@@ -26,7 +26,7 @@ void Calculator::calculate(const Case& task)
 
         res = res != -1
             ? std::min(res, static_cast<int32_t>(map.numberAppliedPieces()))
-            : map.numberAppliedPieces();
+            : static_cast<int32_t>(map.numberAppliedPieces());
     }
 
     m_results.push_back(res);

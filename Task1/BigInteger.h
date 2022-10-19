@@ -5,6 +5,8 @@
 #include <vector>
 #include <iomanip>
 #include <stdlib.h>
+#include <sstream>
+#include <algorithm>
 
 using ElemType = int32_t;
 

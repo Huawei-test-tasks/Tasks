@@ -5,7 +5,7 @@
 
 struct Case
 {
-    Case(uint32_t _N, uint32_t _M)
+    Case(uint32_t _N, int64_t _M)
         : N(_N), M(_M)
     {}
 
